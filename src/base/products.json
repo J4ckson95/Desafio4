@@ -1,0 +1,35 @@
+[
+	{
+		"title": "Dune I",
+		"description": "Pendiente",
+		"code": 2059,
+		"price": 60000,
+		"status": true,
+		"stock": 50,
+		"category": "Book of fantasy",
+		"thumbnail": [],
+		"id": 1
+	},
+	{
+		"title": "Dune II",
+		"description": "Pendiente",
+		"code": 2060,
+		"price": 60000,
+		"status": true,
+		"stock": 70,
+		"category": "Book of fantasy",
+		"thumbnail": [],
+		"id": 2
+	},
+	{
+		"title": "Dune III",
+		"description": "Pendiente",
+		"code": 2061,
+		"price": 60000,
+		"status": true,
+		"stock": 70,
+		"category": "Book of fantasy",
+		"thumbnail": [],
+		"id": 3
+	}
+]

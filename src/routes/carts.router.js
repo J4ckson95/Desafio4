@@ -20,6 +20,4 @@ router.put("/:cid/product/:pid", async (req, res) => {
     await manager.addProductToCart(idCart, idProduct, quantity)
     res.send({status: "Succes", message: "Produts added "})
 })
-
-
 export default router
