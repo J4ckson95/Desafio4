@@ -1,3 +1,12 @@
-import ProductManager from "./class/ProductManager.js";
+import express from "express"
+import productsRouter from "./routes/products.router.js"
+import cartsRouter from "./routes/carts.router.js"
 
-const manager = new ProductManager("./base/products.json")
+const app = express()
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
+app.use("/api/products", productsRouter)
+app.use("/api/carts", cartsRouter)
+
+app.listen(7777, () => console.log("Levantando servidor"))

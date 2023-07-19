@@ -37,4 +37,17 @@ export default class CartManager {
         if (!foundCart) throw new Error(`Can't find the cart you are trying to search, id: ${idCart}`)
         return foundCart.products
     }
+    async addProductToCart(IdCart, IdProduct, quantityProduct) {
+        await this.#readProductsFromFile()
+        const indexCart = this.carts.findIndex((element) => element.id === IdCart)
+        if (indexCart === -1) throw new Error(`No cart found with id: ${IdCart}`)
+        const foundProduct = this.carts[indexCart].products.find((element) => element.product === IdProduct)
+        const { quantity } = quantityProduct
+        if (foundProduct) foundProduct.quantity += quantity
+        else {
+            const newProduct = { product: IdProduct, ...quantityProduct }
+            this.carts[indexCart].products.push(newProduct)
+        }
+        await this.#writeProductsToFile()
+    }
 }
