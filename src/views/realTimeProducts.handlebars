@@ -1,0 +1,43 @@
+<div class="container">
+    <div class="list_of_products">
+        {{#each dataFromFile}}
+        <table>
+            <tr>
+                <th>Title</th>
+                <td>{{this.title}}</td>
+            </tr>
+            <tr>
+                <th>descriptión</th>
+                <td>{{this.description}}</td>
+            </tr>
+            <tr>
+                <th>code</th>
+                <td>{{this.code}}</td>
+            </tr>
+            <tr>
+                <th>price</th>
+                <td>{{this.price}}</td>
+            </tr>
+        </table>
+        {{/each}}
+    </div>
+    <div>
+        <form id="createProductForm">
+            <input type="text" name="title" placeholder="Nombre del producto">
+            <input type="text" name="description" placeholder="Descripción del producto">
+            <input type="number" name="code">
+            <input type="number" name="price" placeholder="Precio">
+            <input type="text" name="status">
+            <input type="number" name="stock">
+            <input type="text" name="category">
+            <input type="text" name="thumbnail">
+            <button type="submit">Crear Producto</button>
+        </form>
+        <form id="deleteProductForm">
+            <input type="text" name="idProduct" placeholder="ID del producto a eliminar">
+            <button type="submit">Eliminar Producto</button>
+        </form>
+    </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/main.js"></script>
